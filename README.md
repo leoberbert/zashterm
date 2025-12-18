@@ -18,6 +18,7 @@
 ## Key Features
 
 ### 🤖 AI Assistant Integration
+
 <img width="1457" height="699" alt="image" src="https://github.com/user-attachments/assets/ce5f1ebd-2527-4834-b5ca-cbf1c086efc6" />
 
 
@@ -28,40 +29,24 @@ Zashterm creates a bridge between your shell and Large Language Models (LLMs), o
 * **Smart Suggestions**: Ask how to perform tasks and receive ready-to-execute commands directly in the UI.
 
 
-### 🎨 Smart Context<img width="1386" height="944" alt="Zashterm colors1" src="https://github.com/user-attachments/assets/1674352a-b1ad-4668-b514-21c41306c58e" />
-**Aware Highlighting**
-<img width="1386" height="944" alt="Zashterm colors1" src="https://github.com/user-attachments/assets/ff8fb678-0aac-405a-a2c2-0835511a59db" />
-
-Go beyond basic color schemes. Zashterm applies **dynamic, real-time highlighting** based on both the *content* and the *command being executed*—**without requiring any configuration in Bash or whatever shell you are using**. All color processing happens directly inside Zashterm’s interface, which is especially helpful when working on servers, containers, or restricted environments where you cannot modify files like `.bashrc` or `.zshrc`.
-
-* **Command-Specific Rules**: Different highlighting rules are automatically applied when running tools such as `docker`, `ping`, `lspci`, `ip`, and more.
-* **Live Input Highlighting**: Shell commands are colorized in real time as you type (powered by Pygments).
-* **Output Colorization**: Automatically highlights IP addresses, UUIDs, URLs, error messages, JSON structures, and other patterns in logs.
-* **File Viewer**: Enhances `cat` output with full syntax highlighting for code files.
-<img width="1386" height="944" alt="Zashterm have color2" src="https://github.com/user-attachments/assets/10cc985e-a31f-4d45-bd64-57dfe68a91ef" />
-
-In addition, Zashterm offers a **complete customization interface**, allowing you to adjust:
-<img width="1386" height="944" alt="Zashterm have color3" src="https://github.com/user-attachments/assets/c42461ac-c8ae-41b7-883f-534ea9b333b8" />
-
-* **Text and background colors**
-* **Bold**, *italic*, ***underline***, ~~strikethrough~~
-* **Blinking mode** for drawing attention to critical information
-<img width="1386" height="944" alt="Zashterm have color4" src="https://github.com/user-attachments/assets/091e9c39-0958-49ca-8209-6c4c264a0c11" />
-
-This gives you a clearer, more readable view of command output—especially in environments where traditional shell customization is not possible.
-
-
 ### 📂 Advanced File Manager & Remote Editing
-<img width="823" height="1162" alt="image" src="https://github.com/user-attachments/assets/a112042a-ebca-41cd-a0bd-e4454a3eacf5" />
+
+<img width="823" height="1162" alt="image" src="https://github.com/user-attachments/assets/a4e560fd-8558-4188-a906-ffcb51581d1c" />
+
+
 -   **Integrated Side Panel**: Browse local and remote file systems without leaving the terminal.
 -   **Remote Editing**: Click to edit remote files (SSH/SFTP) in your favorite local editor. Zashterm watches the file and automatically uploads changes on save.
 -   **Drag & Drop Transfer**: Upload files to remote servers simply by dragging them into the terminal window over (SFTP/Rsync)
 -   **Transfer Manager**: Track uploads and downloads with a detailed progress manager and history.
-<img width="1386" height="944" alt="image" src="https://github.com/user-attachments/assets/37d7e497-999d-4740-b9bb-cfec9cba17fc" />
+<img width="1386" height="944" alt="image" src="https://github.com/user-attachments/assets/6766d022-c6ef-48ae-9f98-963e6165c5a0" />
+
 
 
 ### ⚡ Productivity Tools
-<img width="458" height="422" alt="image" src="https://github.com/user-attachments/assets/eb16295b-00ea-4ab7-b6d4-a5fef3d40f6a" />
+
+<img width="1453" height="692" alt="image" src="https://github.com/user-attachments/assets/6a0347ea-7b79-465c-abc7-ce77b91f5225" />
+
+
 -   **Input Broadcasting**: Type commands in one terminal and execute them simultaneously across multiple selected tabs/panes.
 -   **Quick Prompts**: One-click AI prompts for common tasks (e.g., "Explain this error", "Optimize this command").
 
