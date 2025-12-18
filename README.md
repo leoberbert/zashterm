@@ -9,20 +9,17 @@
 
 ## Screenshots
 
-<img width="1526" height="1151" alt="Zashterm" src="https://github.com/user-attachments/assets/ab92d508-b559-46bb-895c-dad64ea6cfbf" />
+<img width="1457" height="699" alt="image" src="https://github.com/user-attachments/assets/080448b1-4fdd-44ba-8c70-6d70fb2651e5" />
 
-<img width="1386" height="944" alt="image" src="https://github.com/user-attachments/assets/ae48ce7e-a597-44cd-ba70-4e9c28987730" />
+<img width="1457" height="699" alt="image" src="https://github.com/user-attachments/assets/d79d710d-f60f-455e-a167-bb0527367264" />
 
-<img width="1235" height="669" alt="image" src="https://github.com/user-attachments/assets/2837c12f-cf94-4191-bb71-b6d5db3b9ea7" />
-
-<img width="1231" height="660" alt="image" src="https://github.com/user-attachments/assets/5b80da29-81ce-4551-8386-8f7d6cf5c1ac" />
-
-
+<img width="1457" height="699" alt="image" src="https://github.com/user-attachments/assets/7c91e96b-114b-4da3-9c92-aae9f4a943fe" />
 
 ## Key Features
 
 ### 🤖 AI Assistant Integration
-<img width="1386" height="944" alt="Zashterm AI Assistant" src="https://github.com/user-attachments/assets/22d329c8-d20f-4714-b30e-e83792ac6154" />
+<img width="1457" height="699" alt="image" src="https://github.com/user-attachments/assets/ce5f1ebd-2527-4834-b5ca-cbf1c086efc6" />
+
 
 Zashterm creates a bridge between your shell and Large Language Models (LLMs), offering an **optional** and fully **non-intrusive** AI experience. The assistant only processes the content that **you explicitly select and choose to send**, ensuring full control over your privacy.
 * **Multi-Provider Support**: Native integration with **Groq**, **Google Gemini**, **OpenRouter**, and **Local LLMs** (Ollama/LM Studio).
