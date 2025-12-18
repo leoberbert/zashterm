@@ -97,35 +97,34 @@ sudo pacman -S python python-gobject vte4 python-cryptography python-psutil pyth
 
 ## Installation
 
-#### From Package (Recommended)
+#### Prebuilt Packages (replace TAG/VERSION for the release you want)
 
-If a package is available for your distribution:
-
+Debian/Ubuntu (DEB):
 ```bash
-sudo pacman -U zashterm-*-x86_64.pkg.tar.zst
+TAG=v0.0.2
+VERSION=0.0.2-1
+cd /tmp
+wget "https://github.com/leoberbert/zashterm/releases/download/${TAG}/zashterm_${VERSION}_amd64.deb"
+sudo apt install "./zashterm_${VERSION}_amd64.deb"
 ```
 
-#### From Source
+Fedora/RHEL/openSUSE (RPM):
+```bash
+TAG=v0.0.2
+VERSION=0.0.2-1
+cd /tmp
+wget "https://github.com/leoberbert/zashterm/releases/download/${TAG}/zashterm-${VERSION}.x86_64.rpm"
+sudo dnf install "./zashterm-${VERSION}.x86_64.rpm"
+```
 
-1.  Clone the repository:
-
-    ```bash
-    git clone [https://github.com/leoberbert/zashterm.git](https://github.com/leoberbert/zashterm.git)
-    cd zashterm
-    ```
-
-2.  Run the application directly:
-
-    ```bash
-    python -m zashterm
-    ```
-
-3.  To build and install (Arch/Manjaro):
-
-    ```bash
-    makepkg -si
-    ```
-
+Arch/Manjaro (PKG):
+```bash
+TAG=v0.0.2
+VERSION=0.0.2-1-any
+cd /tmp
+wget "https://github.com/leoberbert/zashterm/releases/download/${TAG}/zashterm-${VERSION}.pkg.tar.zst"
+sudo pacman -U "zashterm-${VERSION}.pkg.tar.zst"
+```
 ## Usage
 
 ```bash

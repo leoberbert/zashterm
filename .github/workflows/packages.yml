@@ -34,6 +34,17 @@ jobs:
             sudo -u builder env PKGVER=${GITHUB_REF##*/v} PKGREL=1 makepkg -s --noconfirm
           "
           sudo chown -R $(id -u):$(id -g) .
+      - name: Rename Arch package (drop pkgrel in filename)
+        run: |
+          set -e
+          for f in pkgbuild/*.pkg.tar.zst; do
+            base=$(basename "$f")
+            new=${base/-1-/-}          # drop pkgrel
+            new=${new/-any/_any}       # use underscore before arch
+            if [ "$base" != "$new" ]; then
+              mv "$f" "pkgbuild/$new"
+            fi
+          done
       - name: Upload Arch package
         uses: actions/upload-artifact@v4
         with:
@@ -169,13 +180,22 @@ jobs:
           fpm -s dir -t deb \
             -n zashterm \
             -v "${VERSION}" \
-            --iteration 1 \
             --architecture amd64 \
             --description "Zash terminal emulator" \
             "${DEB_DEP_ARGS[@]}" \
             -C pkgroot \
             --prefix / \
             .
+      - name: Rename DEB package (drop iteration in filename)
+        run: |
+          set -e
+          for f in *.deb; do
+            base=$(basename "$f")
+            new=${base/-1_/_}
+            if [ "$base" != "$new" ]; then
+              mv "$f" "$new"
+            fi
+          done
       - name: Upload DEB
         uses: actions/upload-artifact@v4
         with:
@@ -323,7 +343,6 @@ jobs:
           fpm -s dir -t rpm \
             -n zashterm \
             -v "${VERSION}" \
-            --iteration 1 \
             --architecture x86_64 \
             --description "Zashterm terminal emulator" \
             --after-remove cleanup-rpm.sh \
@@ -331,6 +350,16 @@ jobs:
             -C pkgroot \
             --prefix / \
             .
+      - name: Rename RPM package (drop iteration in filename)
+        run: |
+          set -e
+          for f in *.rpm; do
+            base=$(basename "$f")
+            new=${base/-1./.}
+            if [ "$base" != "$new" ]; then
+              mv "$f" "$new"
+            fi
+          done
       - name: Upload RPM
         uses: actions/upload-artifact@v4
         with:
