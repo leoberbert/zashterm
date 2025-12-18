@@ -436,7 +436,7 @@ class ZashApp(Adw.Application):
                 version=APP_VERSION,
                 developers=DEVELOPER_TEAM,
                 copyright=COPYRIGHT,
-                license_type=Gtk.License.MIT_X11,
+                license_type=Gtk.License.GPL_3_0,
                 issue_url=ISSUE_URL,
                 comments=_("A modern terminal emulator with session management"),
             )

@@ -36,7 +36,7 @@ pkgver=${PKGVER:-$(date +%y.%m.%d)}
 pkgrel=${PKGREL:-$(date +%H%M)}
 
 arch=('any')
-license=('MIT')
+license=('GPL3')
 url="https://github.com/leoberbert/${pkgname}"
 source=("git+${url}.git")
 md5sums=('SKIP')

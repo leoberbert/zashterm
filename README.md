@@ -1,8 +1,8 @@
 # Zashterm
 
 <p align="center">
-  <a href="https://github.com/leoberbert/zashterm/releases"><img src="https://img.shields.io/badge/Version-1.9.1-blue.svg" alt="Version"/></a>
-  <a href="https://github.com/leoberbert/zashterm/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"/></a>
+  <a href="https://github.com/leoberbert/zashterm/releases"><img src="https://img.shields.io/github/v/release/leoberbert/zashterm?display_name=tag&sort=semver" alt="Latest Release"/></a>
+  <a href="https://github.com/leoberbert/zashterm/blob/main/LICENSE"><img src="https://img.shields.io/github/license/leoberbert/zashterm" alt="License"/></a>
 </p>
 
 **Zashterm** is a modern, intuitive, and innovative terminal built with GTK4 and Adwaita. While it offers advanced features appreciated by developers and system administrators, it also stands out for making the command-line environment more accessible, helping those who are just beginning to learn how to use the terminal. Its simplified session management, built-in file manager, automatic color highlighting for improved readability, and a variety of other features bring convenience to users of all skill levels on any Linux distribution.
@@ -166,7 +166,7 @@ Contributions are welcome\!
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GNU GPL v3 (or later) - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
