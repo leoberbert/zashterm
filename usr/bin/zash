@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Compatibility wrapper to keep the legacy binary name working.
+exec /usr/bin/zashterm "$@"

@@ -1,0 +1,43 @@
+[project]
+name = "zashterm"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Terminals :: Terminal Emulators/X Terminals",
+]
+version = "0.1.0"
+authors = [
+    { name = "Leonardo Berbert", email = "leo4berbert@gmail.com" },
+]
+license = "MIT"
+license-files = ["LICENSE"]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["PyGObject", "pycairo", "setproctitle", "requests", "psutil", "regex; extra == 'performance'", "Pygments; extra == 'syntax-highlighting'"]
+
+[project.gui-scripts]
+zashterm = "zashterm:main"
+# Legacy entry point kept for compatibility; remove once downstream users migrate.
+zash = "zashterm:main"
+
+[project.urls]
+Homepage = "https://github.com/leoberbert/zashterm"
+Issues = "https://github.com/leoberbert/zashterm/issues"
+
+[project.optional-dependencies]
+performance = ["regex"]
+syntax-highlighting = ["Pygments"]
+backup = []
+all = ["regex", "Pygments"]
+
+[build-system]
+requires = ["uv_build"]
+build-backend = "uv_build"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["zashterm"]
+
+[tool.setuptools.package-dir]
+"" = "src"

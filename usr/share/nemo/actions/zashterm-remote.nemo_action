@@ -1,0 +1,36 @@
+[Nemo Action]
+Active=true
+Name=Open in Zashterm (SSH)
+Name[pt]=Abrir no Zashterm (SSH)
+Name[es]=Abrir en Zashterm (SSH)
+Name[bg]=Отвори в Zashterm (SSH)
+Name[cs]=Otevřít v Zashterm (SSH)
+Name[da]=Åbn i Zashterm (SSH)
+Name[de]=In Zashterm öffnen (SSH)
+Name[el]=Άνοιγμα στο Zashterm (SSH)
+Name[et]=Ava Zashtermis (SSH)
+Name[fi]=Avaa Zashtermissa (SSH)
+Name[fr]=Ouvrir dans Zashterm (SSH)
+Name[he]=פתח ב-Zashterm (SSH)
+Name[hr]=Otvori u Zashtermu (SSH)
+Name[hu]=Megnyitás Zashtermban (SSH)
+Name[is]=Opna í Zashterm (SSH)
+Name[it]=Apri in Zashterm (SSH)
+Name[ja]=Zashtermで開く (SSH)
+Name[ko]=Zashterm에서 열기 (SSH)
+Name[nl]=Openen in Zashterm (SSH)
+Name[no]=Åpne i Zashterm (SSH)
+Name[pl]=Otwórz w Zashterm (SSH)
+Name[ro]=Deschide în Zashterm (SSH)
+Name[ru]=Открыть в Zashterm (SSH)
+Name[sk]=Otvoriť v Zashterm (SSH)
+Name[sv]=Öppna i Zashterm (SSH)
+Name[tr]=Zashterm’de aç (SSH)
+Name[uk]=Відкрити в Zashterm (SSH)
+Name[zh]=在 Zashterm 中打开 (SSH)
+
+Exec=zashterm --convert-to-ssh %F
+Icon-Name=zashterm
+Selection=any
+Extensions=dir
+UriScheme=sftp

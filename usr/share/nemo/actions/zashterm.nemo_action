@@ -1,0 +1,35 @@
+[Nemo Action]
+Active=true
+Name=Open in Zashterm
+Name[pt]=Abrir no Zashterm
+Name[es]=Abrir en Zashterm
+Name[bg]=Отвори в Zashterm
+Name[cs]=Otevřít v Zashterm
+Name[da]=Åbn i Zashterm
+Name[de]=In Zashterm öffnen
+Name[el]=Άνοιγμα στο Zashterm
+Name[et]=Ava Zashtermis
+Name[fi]=Avaa Zashtermissa
+Name[fr]=Ouvrir dans Zashterm
+Name[he]=פתח ב-Zashterm
+Name[hr]=Otvori u Zashtermu
+Name[hu]=Megnyitás Zashtermban
+Name[is]=Opna í Zashterm
+Name[it]=Apri in Zashterm
+Name[ja]=Zashtermで開く
+Name[ko]=Zashterm에서 열기
+Name[nl]=Openen in Zashterm
+Name[no]=Åpne i Zashterm
+Name[pl]=Otwórz w Zashterm
+Name[ro]=Deschide în Zashterm
+Name[ru]=Открыть в Zashterm
+Name[sk]=Otvoriť v Zashterm
+Name[sv]=Öppna i Zashterm
+Name[tr]=Zashterm’de aç
+Name[uk]=Відкрити в Zashterm
+Name[zh]=在 Zashterm 中打开
+
+Exec=zashterm --working-directory %F
+Icon-Name=zashterm
+Selection=any
+Extensions=dir
