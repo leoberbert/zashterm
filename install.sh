@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-CONTAINER_NAME="arch-box"
+CONTAINER_NAME="arch-box-zash"
 PACKAGE_NAME="zashterm"
 # Use fully-qualified image to avoid short-name errors (Debian/Ubuntu podman)
 ARCH_IMAGE="${ARCH_IMAGE:-docker.io/library/archlinux:latest}"
