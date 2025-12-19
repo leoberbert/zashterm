@@ -4,7 +4,8 @@ set -euo pipefail
 
 CONTAINER_NAME="arch-box"
 PACKAGE_NAME="zashterm"
-ARCH_IMAGE="archlinux:latest"
+# Use fully-qualified image to avoid short-name errors (Debian/Ubuntu podman)
+ARCH_IMAGE="${ARCH_IMAGE:-docker.io/library/archlinux:latest}"
 
 log() { echo -e "[$(date +%H:%M:%S)] $*"; }
 
@@ -31,47 +32,47 @@ ensure_tools() {
       PKG_INSTALL="sudo pacman -Syu --needed --noconfirm podman distrobox"
       ;;
     *)
-      echo "Não foi possível detectar a distro para instalar podman/distrobox."
-      echo "Instale manualmente podman e distrobox e execute novamente."
+      echo "Could not detect the distro to install podman/distrobox."
+      echo "Please install podman and distrobox manually and run this script again."
       exit 1
       ;;
   esac
 
-  log "Instalando podman e distrobox..."
+  log "Installing podman and distrobox..."
   eval "$PKG_INSTALL"
 }
 
 create_container() {
   if distrobox ls | grep -q "$CONTAINER_NAME"; then
-    log "Container $CONTAINER_NAME já existe."
+    log "Container $CONTAINER_NAME already exists."
     return
   fi
-  log "Criando container $CONTAINER_NAME baseado em $ARCH_IMAGE..."
+  log "Creating container $CONTAINER_NAME based on $ARCH_IMAGE..."
   distrobox create --name "$CONTAINER_NAME" --image "$ARCH_IMAGE" --yes
 }
 
 install_in_container() {
-  log "Configurando ambiente Arch e instalando $PACKAGE_NAME via AUR..."
+  log "Setting up Arch environment and installing $PACKAGE_NAME from AUR..."
   distrobox enter "$CONTAINER_NAME" -- bash -c "
     set -euo pipefail
     sudo pacman -Syu --needed --noconfirm base-devel git
 
     if ! command -v yay >/dev/null 2>&1; then
-      echo 'Instalando yay-bin...'
+      echo 'Installing yay-bin...'
       git clone https://aur.archlinux.org/yay-bin.git /tmp/yay-bin
       cd /tmp/yay-bin && makepkg -si --noconfirm
     fi
 
-    echo 'Instalando $PACKAGE_NAME...'
+    echo 'Installing $PACKAGE_NAME...'
     yay -S --noconfirm $PACKAGE_NAME
 
-    echo 'Exportando aplicativo para o host...'
+    echo 'Exporting application to the host...'
     distrobox-export --app $PACKAGE_NAME
   "
 }
 
-log "Iniciando automação para $PACKAGE_NAME"
+log "Starting automation for $PACKAGE_NAME"
 ensure_tools
 create_container
 install_in_container
-log "Concluído. Você pode rodar '$PACKAGE_NAME' diretamente no host."
+log "Done. You can run '$PACKAGE_NAME' directly on the host."

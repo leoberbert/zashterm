@@ -79,6 +79,17 @@ sudo pacman -S python python-gobject vte4 python-cryptography python-psutil pyth
 
 ## Installation
 
+Quick install (no clone required):
+```bash
+curl -fsSL https://raw.githubusercontent.com/leoberbert/zashterm/refs/heads/main/install.sh | bash
+```
+
+Alternatively, download and run:
+```bash
+curl -fsSLO https://raw.githubusercontent.com/leoberbert/zashterm/refs/heads/main/install.sh
+bash install.sh
+```
+
 #### Prebuilt Packages (replace TAG/VERSION for the release you want)
 
 Debian/Ubuntu (DEB):
