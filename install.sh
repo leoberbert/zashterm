@@ -66,9 +66,21 @@ cleanup_container() {
 
 install_in_container() {
   log "Setting up Arch environment and installing $PACKAGE_NAME from AUR..."
-  distrobox enter "$CONTAINER_NAME" -- bash <<'INBOX'
+  HOST_LANG="${LANG:-en_US.UTF-8}"
+  distrobox enter "$CONTAINER_NAME" -- env LANG_HOST="$HOST_LANG" bash <<'INBOX'
 set -euo pipefail
-sudo pacman -Syu --needed --noconfirm base-devel git
+
+# Ensure locales to avoid warnings when host uses pt_BR or other UTF-8 locales
+sudo pacman -Syu --needed --noconfirm glibc base-devel git
+if [ -n "${LANG_HOST:-}" ]; then
+  sudo sed -i "s/^#\\(${LANG_HOST} UTF-8\\)/\\1/" /etc/locale.gen || true
+fi
+sudo sed -i "s/^#\\(en_US.UTF-8 UTF-8\\)/\\1/" /etc/locale.gen || true
+sudo sed -i "s/^#\\(pt_BR.UTF-8 UTF-8\\)/\\1/" /etc/locale.gen || true
+sudo locale-gen || true
+echo "LANG=${LANG_HOST:-en_US.UTF-8}" | sudo tee /etc/locale.conf >/dev/null
+export LANG=${LANG_HOST:-en_US.UTF-8}
+export LC_ALL=${LANG_HOST:-en_US.UTF-8}
 
 if ! command -v yay >/dev/null 2>&1; then
   echo "Installing yay-bin..."
