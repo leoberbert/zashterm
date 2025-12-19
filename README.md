@@ -72,52 +72,24 @@ To build and run Zashterm, you will need:
     -   `psutil` (Optional, for advanced process tracking)
     -   `regex` (Optional, for high-performance highlighting patterns)
 
-On an Arch/Manjaro-based system:
-```bash
-sudo pacman -S python python-gobject vte4 python-cryptography python-psutil python-requests python-pygments
-````
+## Installation (works on any distro)
 
-## Installation
-
-Quick install (no clone required):
+Arch/Manjaro (AUR):
 ```bash
-curl -fsSL https://raw.githubusercontent.com/leoberbert/zashterm/refs/heads/main/install.sh | bash
+yay -S zashterm        # ou
+paru -S zashterm
 ```
 
-Alternatively, download and run:
+Debian/Ubuntu/Fedora/openSUSE/etc. via Distrobox installer:
 ```bash
+# Quick install (no clone required)
+curl -fsSL https://raw.githubusercontent.com/leoberbert/zashterm/refs/heads/main/install.sh | bash
+
+# Alternatively, download and run
 curl -fsSLO https://raw.githubusercontent.com/leoberbert/zashterm/refs/heads/main/install.sh
 bash install.sh
 ```
 
-#### Prebuilt Packages (replace TAG/VERSION for the release you want)
-
-Debian/Ubuntu (DEB):
-```bash
-TAG=v0.0.2
-VERSION=0.0.2-1
-cd /tmp
-wget "https://github.com/leoberbert/zashterm/releases/download/${TAG}/zashterm_${VERSION}_amd64.deb"
-sudo apt install "./zashterm_${VERSION}_amd64.deb"
-```
-
-Fedora/RHEL/openSUSE (RPM):
-```bash
-TAG=v0.0.2
-VERSION=0.0.2-1
-cd /tmp
-wget "https://github.com/leoberbert/zashterm/releases/download/${TAG}/zashterm-${VERSION}.x86_64.rpm"
-sudo dnf install "./zashterm-${VERSION}.x86_64.rpm"
-```
-
-Arch/Manjaro (PKG):
-```bash
-TAG=v0.0.2
-VERSION=0.0.2-1-any
-cd /tmp
-wget "https://github.com/leoberbert/zashterm/releases/download/${TAG}/zashterm-${VERSION}.pkg.tar.zst"
-sudo pacman -U "zashterm-${VERSION}.pkg.tar.zst"
-```
 ## Usage
 
 ```bash
