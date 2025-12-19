@@ -47,6 +47,17 @@ ensure_tools() {
 
   log "Installing podman and distrobox..."
   eval "$PKG_INSTALL"
+
+  # Fallback: if distrobox is still missing (e.g., Alma/RHEL repos), install from upstream script
+  if ! command -v distrobox >/dev/null 2>&1; then
+    log "distrobox not found in repo. Installing from upstream script..."
+    curl -fsSL https://raw.githubusercontent.com/89luca89/distrobox/main/install | sudo sh
+  fi
+
+  if ! command -v distrobox >/dev/null 2>&1 || ! command -v podman >/dev/null 2>&1; then
+    echo "Failed to install podman/distrobox automatically. Please install them manually and rerun."
+    exit 1
+  fi
 }
 
 create_container() {
