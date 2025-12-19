@@ -330,9 +330,9 @@ jobs:
             gobject-introspection
             gtk4
             libadwaita
-            vte291-gtk4
+            vte291-gtk4           # Fedora name (provides typelib(Vte))
+            'typelib(Vte)'        # openSUSE name
             'typelib(Adw)'
-            'typelib(Vte)'
             rsync
             sshpass
           )
