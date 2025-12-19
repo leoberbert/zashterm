@@ -230,14 +230,14 @@ jobs:
           mkdir -p pkgroot/usr/bin pkgroot/usr/share
           cp -a usr/bin pkgroot/usr/
           cp -a usr/share pkgroot/usr/
-          # Move/copy pure Python site-packages into distro-friendly paths (targeting Fedora py3.14)
+          # Move/copy pure Python site-packages into distro-friendly paths (targeting the detected Python ABI)
           python - <<'PY'
           import pathlib, shutil, sys
 
           root = pathlib.Path("pkgroot")
           build_py_ver = f"{sys.version_info.major}.{sys.version_info.minor}"
 
-          # Detect python versions seen in pkgroot and pick the highest as target (Fedora default today: 3.14)
+          # Detect python versions seen in pkgroot and pick the highest as target
           candidate_versions = set()
           candidate_versions.add(build_py_ver)
           for path in root.glob("usr/**/python3.*"):
@@ -245,8 +245,6 @@ jobs:
                   candidate_versions.add(path.name.replace("python", ""))
               except Exception:
                   pass
-          if "3.14" not in candidate_versions:
-              candidate_versions.add("3.14")
 
           def ver_key(v: str):
               try:
@@ -329,9 +327,12 @@ jobs:
             python3-setproctitle
             python3-pygments
             python3-regex
+            gobject-introspection
             gtk4
             libadwaita
             vte291-gtk4
+            'typelib(Adw)'
+            'typelib(Vte)'
             rsync
             sshpass
           )
