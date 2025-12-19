@@ -95,6 +95,7 @@ export LC_ALL=${LANG_HOST:-en_US.UTF-8}
 
 if ! command -v yay >/dev/null 2>&1; then
   echo "Installing yay-bin..."
+  rm -rf /tmp/yay-bin
   git clone https://aur.archlinux.org/yay-bin.git /tmp/yay-bin
   cd /tmp/yay-bin && makepkg -si --noconfirm
 fi
